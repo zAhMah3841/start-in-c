@@ -18,5 +18,5 @@ void main(void)
     
     s=cbrt(9+pow(x-y,2))/(x*x+y*y+2)-exp(fabsf(x-y))*pow(tan(z),3); //Рассчет результата
     
-    printf("Результат s:%f",&s);
+    printf("Результат s:%f",s);
 }
