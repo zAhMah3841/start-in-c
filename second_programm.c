@@ -15,8 +15,11 @@ void main(void)
     scanf("%f",&y,"/n");    //Ввод переменной у
     printf("Введите значение z:");
     scanf("%f",&z,"/n");    //Ввод переменной z
-    
-    s=cbrt(9+pow(x-y,2))/(x*x+y*y+2)-exp(fabsf(x-y))*pow(tan(z),3); //Рассчет результата
-    
-    printf("Результат s:%f",s);
+
+    //Рассчет результата
+    s=cbrt(9+pow(x-y,2));
+    s=s/(x*x+y*y+2);
+    s=s-exp(fabsf(x-y))*pow(tan(z),3);
+
+    printf("Результат s:%f",s); //Вывод результата s
 }
