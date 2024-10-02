@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h> //Библиотека для работами со строками и памятью
 
-int main() {
+int main(void) {
     //Подключение русской локали
     setlocale(LC_ALL, "Russian");
     
