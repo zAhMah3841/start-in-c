@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <locale.h>
 #include <string.h> //Библиотека для работами со строками и памятью
 
 int main(void) {
