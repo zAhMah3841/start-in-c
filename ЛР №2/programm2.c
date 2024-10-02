@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <locale.h>
 
-int main() {
+int main(void) {
 
     //Установка русской локали
     setlocale(LC_ALL, "Russian");
