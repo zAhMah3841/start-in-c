@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <math.h>
 #include <locale.h>
+#include <stdbool.h>
+
+bool approx_equal(float a, float b)
+{
+  const float EPSILON = 0.1;
+  return fabs(a - b) < EPSILON;
+}
 
 int main(void) {
 
@@ -8,7 +15,7 @@ int main(void) {
     setlocale(LC_ALL,"Russian"); 
 
     //Объявление вещественных переменных
-    float x1, y1, x2, y2, x3, y3, a, b, c;
+    float x1, y1, x2, y2, x3, y3, a, b, c, x, y, z;
 
     //Ввод данных
     printf("Введите координаты первой вершины (x1 y1): ");
@@ -19,12 +26,12 @@ int main(void) {
     scanf("%f %f", &x3, &y3);
 
     //Рассчет длин сторон формулой Евклидова
-    a = sqrtf((x1-x2)*(y1-y2));
-    b = sqrtf((x2-x3)*(y2-y3));
-    c = sqrtf((x3-x1)*(y3-y1));
+    a = sqrtf(pow((x1-x2), 2) + pow((y1-y2), 2));
+    b = sqrtf(pow((x2-x3), 2) + pow((y2-y3), 2));
+    c = sqrtf(pow((x3-x1), 2) + pow((y3-y1), 2));
 
     // Проверка вида треугольника
-    if (a*a == b*b+c*c || b*b == a*a+c*c || c*c == a*a + c*c)
+    if (approx_equal(a*a, b*b+c*c) || approx_equal(b*b, a*a+c*c) || approx_equal(c*c, a*a + c*c))
             printf("Треугольник прямоугольный\n");
         else if (a*a > b*b+c*c || b*b > a*a+c*c || c*c > a*a + c*c)
             printf("Треугольник тупоугольный\n");
@@ -34,6 +41,12 @@ int main(void) {
     else
         printf("Это не треугольник\n");
 
+x=a*a;
+y=b*b;
+z=c*c;
+printf("%f\n", x);
+printf("%f\n", y);
+printf("%f\n", z);
 
     return 0;
 }
