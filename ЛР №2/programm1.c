@@ -31,7 +31,7 @@ int main(void) {
     c = sqrtf(pow((x3-x1), 2) + pow((y3-y1), 2));
 
     // Проверка вида треугольника
-  if (a+b > c, a+c > b, b+c > b)
+  if (a+b > c && a+c > b && b+c > b)
     if (approx_equal(a*a, b*b+c*c) || approx_equal(b*b, a*a+c*c) || approx_equal(c*c, a*a + b*b))
             printf("Треугольник прямоугольный\n");
         else if (a*a > b*b+c*c || b*b > a*a+c*c || c*c > a*a + b*b)
