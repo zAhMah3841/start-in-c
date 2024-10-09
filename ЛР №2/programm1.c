@@ -31,22 +31,16 @@ int main(void) {
     c = sqrtf(pow((x3-x1), 2) + pow((y3-y1), 2));
 
     // Проверка вида треугольника
-    if (approx_equal(a*a, b*b+c*c) || approx_equal(b*b, a*a+c*c) || approx_equal(c*c, a*a + c*c))
+  if (a+b > c, a+c > b, b+c > b)
+    if (approx_equal(a*a, b*b+c*c) || approx_equal(b*b, a*a+c*c) || approx_equal(c*c, a*a + b*b))
             printf("Треугольник прямоугольный\n");
-        else if (a*a > b*b+c*c || b*b > a*a+c*c || c*c > a*a + c*c)
+        else if (a*a > b*b+c*c || b*b > a*a+c*c || c*c > a*a + b*b)
             printf("Треугольник тупоугольный\n");
-        else if (a*a < b*b+c*c || b*b < a*a+c*c || c*c < a*a + c*c)
+        else if (a*a < b*b+c*c || b*b < a*a+c*c || c*c < a*a + b*b)
             printf("Треугольник остроугольный\n");
         
-    else
-        printf("Это не треугольник\n");
-
-x=a*a;
-y=b*b;
-z=c*c;
-printf("%f\n", x);
-printf("%f\n", y);
-printf("%f\n", z);
+  else
+      printf("Это не треугольник\n");
 
     return 0;
 }
